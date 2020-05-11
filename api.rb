@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/cross_origin'
 require 'json'
@@ -50,5 +52,5 @@ get '/word/:letter_count' do
   path = "words/#{letter_count}/#{letter}.txt"
   word = File.readlines(path).sample.chomp
   
-  return { word:  word }.to_json
+  { word:  word }.to_json
 end
