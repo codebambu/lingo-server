@@ -49,7 +49,7 @@ get '/word/:letter_count' do
   letter_count = params['letter_count']
   letter_count
   letter = playable_letters.sample
-  path = "words/#{letter_count}/#{letter}.txt"
+  path = "data/words/#{letter_count}/#{letter}.txt"
   word = File.readlines(path).sample.chomp
   
   { word:  word }.to_json
